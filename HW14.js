@@ -21,7 +21,7 @@ modalInput.addEventListener(`click`, ({ target }) => {
 })
 
 function saveName() {
-    const enteredName = document.getElementById('name-input').value;
+    const enteredName = document.getElementById('name-input').trim().value;
     localStorage.setItem('username', enteredName);
     showWelcomeModal(enteredName);
 }
