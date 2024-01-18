@@ -21,9 +21,14 @@ modalInput.addEventListener(`click`, ({ target }) => {
 })
 
 function saveName() {
-    const enteredName = document.getElementById('name-input').trim().value;
+    let enteredName = document.getElementById('name-input').value;
+    enteredName = enteredName.trim();
+    if(enteredName !== null && enteredName !== ``){
     localStorage.setItem('username', enteredName);
-    showWelcomeModal(enteredName);
+    showWelcomeModal(enteredName);}
+    else {
+        showWelcomeModal(`NoName`)
+    }
 }
 
 function showWelcomeModal(username) {
